@@ -1,11 +1,24 @@
 import { Request, Response } from "express";
-import {sequelize} from '../instances/mysql'
+import {sequelizeMySQL} from '../instances/mysql'
+import {sequelizePostGree} from '../instances/pg'
 
 export const home = async (req: Request, res: Response)=> {
-    console.log('carrou o home')
-    
+    //POSTGRESQL
     try {
-        await sequelize.authenticate()
+        await sequelizePostGree.authenticate()
+        console.log('deu certo')
+    }catch(error) {
+        console.log('deu erro ai no seu bagulho carai')
+    }
+
+
+
+
+
+    console.log('carrou o home')
+    //MYSQL
+    try {
+        await sequelizeMySQL.authenticate()
         console.log('Olá mundo')
     }catch(error) {
         console.log('Deu erro no seu app ai amigão', error)
