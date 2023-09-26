@@ -7,7 +7,11 @@ import { Op } from "sequelize";
 
 
 export const home = async (req: Request, res: Response)=> {
-    //findall sempre retorna um array
+    //testando Metodo Setter
+   // await UserMySQL.create({
+   //     name: 'caua',
+   //     age: 15
+    //})
     
 
     
