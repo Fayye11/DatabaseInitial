@@ -1,13 +1,26 @@
 {{>partials/header}}
-
-
-
+<br/>
+<fieldset>
+<legend>Novo Usuario</legend>
+<form method="POST" action="/novousuario">
+        <input type="text" name="name" placeholder="Digite um nome"><br/><br/>
+        <input type="text" name="age" placeholder="Digite uma idade"><br/><br/>
+        <input type="submit" placeholder="Inserir Usuario">
+    </form>
+</fieldset>
 <h1>Olá mundo</h1>
 
 
 <ul>
  {{ #usersMySQL }}
-<li> {{name}} - Idade: {{age}} </li>
+    <li> 
+        {{name}} 
+        - Idade: 
+        {{age}}
+        - <a href="usuario/{{id}}/mais">+</a>
+        - <a href="usuario/{{id}}/menos">-</a>
+        - <a href="usuario/{{id}}/excluir">excluir</a>
+        <br/>
  {{ /usersMySQL }}
 
 </ul>

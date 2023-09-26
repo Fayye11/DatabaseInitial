@@ -9,7 +9,8 @@ interface TypePostGree extends Model {
 export const UserPostGree = sequelizePostGree.define<TypePostGree>('User', {
     id: {
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true, 
+        autoIncrement: true
     },
     name: {
         type: DataTypes.STRING

@@ -10,14 +10,15 @@ interface UserInstance extends Model {
 export const UserMySQL = sequelizeMySQL.define<UserInstance>("User", {
     id: {
         type: DataTypes.INTEGER,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     name: {
         type: DataTypes.STRING
     },
     age: {
         type:  DataTypes.INTEGER,
-        defaultValue: 18
+        defaultValue: 18,
     }
 },
 {
